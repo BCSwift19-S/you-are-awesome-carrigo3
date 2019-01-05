@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
-    var index = 0
+    var index = -1
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,19 @@ class ViewController: UIViewController {
                         ]
         //Makes sure that a random message shows each time without repeats
         var newIndex = -1
-        
+
         repeat {
             newIndex = Int.random(in: 0..<messages.count)
         } while index == newIndex
         index = newIndex
         messageLabel.text = messages[index]
+        
+//        var newIndex = Int.random(in: 0..<messages.count)
+//        while index == newIndex{
+//            newIndex = Int.random(in: 0..<messages.count)
+//        }
+//        index = newIndex
+//        messageLabel.text = messages[index]
 
     }
 
