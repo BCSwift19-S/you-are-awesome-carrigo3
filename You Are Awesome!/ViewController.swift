@@ -28,8 +28,8 @@ class ViewController: UIViewController {
                         "I can't wait to download your app!"
                         ]
         //Makes sure that a random message shows each time without repeats
-        var newIndex = -1
-
+        var newIndex: Int // declares but doesn't initialize the variable
+        // var newIndex = -1
         repeat {
             newIndex = Int.random(in: 0..<messages.count)
         } while index == newIndex
