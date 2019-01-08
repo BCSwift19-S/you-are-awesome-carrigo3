@@ -18,16 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhx-BV-5mV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhx-BV-5mV">
                                 <rect key="frame" x="16" y="44" width="343" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="HNQ-hs-GIT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKJ-ge-8kC">
-                                <rect key="frame" x="135" y="152" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="h7P-6E-oyQ">
+                                <rect key="frame" x="16" y="190" width="343" height="550"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKJ-ge-8kC">
+                                <rect key="frame" x="100" y="152" width="175" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="4Hs-ti-Arf"/>
+                                    <constraint firstAttribute="height" constant="30" id="KWX-ua-2f1"/>
+                                </constraints>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="showMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PSg-rr-GLc"/>
@@ -35,6 +43,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h7P-6E-oyQ" secondAttribute="bottom" constant="38" id="1TC-Ux-15M"/>
+                            <constraint firstItem="h7P-6E-oyQ" firstAttribute="top" secondItem="aKJ-ge-8kC" secondAttribute="bottom" constant="8" id="23J-5N-Z0k"/>
+                            <constraint firstItem="zhx-BV-5mV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5T2-hM-QJA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h7P-6E-oyQ" secondAttribute="trailing" constant="16" id="FSH-U1-urL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zhx-BV-5mV" secondAttribute="trailing" constant="16" id="QB1-sJ-Swn"/>
+                            <constraint firstItem="zhx-BV-5mV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nnZ-Cg-Spd"/>
+                            <constraint firstItem="aKJ-ge-8kC" firstAttribute="top" secondItem="zhx-BV-5mV" secondAttribute="bottom" constant="8" id="p2N-6U-uRL"/>
+                            <constraint firstItem="h7P-6E-oyQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qPp-Rf-iap"/>
+                            <constraint firstItem="aKJ-ge-8kC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uW1-86-Pwc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -43,7 +62,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="133.74384236453201"/>
+            <point key="canvasLocation" x="-80.799999999999997" y="133.00492610837438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image1" width="500" height="379"/>
+    </resources>
 </document>
