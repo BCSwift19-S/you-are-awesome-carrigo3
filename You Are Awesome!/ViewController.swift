@@ -33,14 +33,14 @@ class ViewController: UIViewController {
     }
     
     
-    func playSound(soundName: String) {
+    func playSound(soundName: String, audioPlayer: inout AVAudioPlayer) {
         // Can we get a sound from a file named soundName
         if let sound = NSDataAsset(name: soundName) {
             // if this works, the constant "sound" now has the data for our sound named soundName
             // check if sound.data is a sound file
             do {
-                try awesomePlayer = AVAudioPlayer(data: sound.data)
-                awesomePlayer.play()
+                try audioPlayer = AVAudioPlayer(data: sound.data)
+                audioPlayer.play()
             } catch {
                 // if sound.data is not a valid audio file
                 print("ERROR: data in \(soundName) couldn't be played as a sound.")
@@ -79,9 +79,7 @@ class ViewController: UIViewController {
         
         //Play a sound
         let soundName = "sound\(soundIndex)"
-        playSound(soundName: soundName)
-        
-        
+        playSound(soundName: soundName, audioPlayer: &awesomePlayer)
     }
 }
 
