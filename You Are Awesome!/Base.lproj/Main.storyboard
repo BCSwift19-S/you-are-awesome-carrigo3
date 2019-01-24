@@ -79,7 +79,7 @@
                     <connections>
                         <outlet property="awesomeImageView" destination="h7P-6E-oyQ" id="bvq-ed-7CO"/>
                         <outlet property="messageLabel" destination="zhx-BV-5mV" id="Beb-aP-Wlx"/>
-                        <outlet property="soundButton" destination="FMG-rd-eXe" id="P9f-4V-VjM"/>
+                        <outlet property="soundSwitch" destination="FMG-rd-eXe" id="5y9-1v-yUW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
