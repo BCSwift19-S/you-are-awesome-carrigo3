@@ -12,6 +12,8 @@ import AVFoundation
 class ViewController: UIViewController {
     @IBOutlet weak var awesomeImageView: UIImageView!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var soundSwitch: UISwitch!
+    
     var awesomePlayer = AVAudioPlayer()
     var index = -1
     var imageIndex = -1
@@ -19,7 +21,6 @@ class ViewController: UIViewController {
     let numberOfImages = 10
     let numberOfSounds = 6
     
-   
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,7 +32,6 @@ class ViewController: UIViewController {
         } while lastNumber == newIndex
         return newIndex
     }
-    
     
     func playSound(soundName: String, audioPlayer: inout AVAudioPlayer) {
         // Can we get a sound from a file named soundName
@@ -45,13 +45,17 @@ class ViewController: UIViewController {
                 // if sound.data is not a valid audio file
                 print("ERROR: data in \(soundName) couldn't be played as a sound.")
             }
-            
         } else {
             // If reading in the NSDataAsset didn't work, tell the developer / report the error.
             print("ERROR: file \(soundName) didn't load.")
         }
     }
     
+    @IBAction func soundSwitchPressed(_ sender: Any) {
+        if soundSwitch.isOn == false {
+            awesomePlayer.stop()
+        }
+    }
     @IBAction func showMessagePressed(_ sender: UIButton) {
         
         let messages = ["You Are Awesome!",
@@ -79,7 +83,13 @@ class ViewController: UIViewController {
         
         //Play a sound
         let soundName = "sound\(soundIndex)"
-        playSound(soundName: soundName, audioPlayer: &awesomePlayer)
+//        if soundSwitch.isOn == true {
+        if soundSwitch.isOn == true {
+            playSound(soundName: soundName, audioPlayer: &awesomePlayer)
+        }
+        
+        }
+        
     }
-}
+
 
